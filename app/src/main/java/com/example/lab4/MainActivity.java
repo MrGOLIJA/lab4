@@ -6,26 +6,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText editText;
     TextView textView;
-    LocalTime localTime;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        editText.findViewById(R.id.edittext);
-        textView.findViewById(R.id.texttotime);
+        editText = findViewById(R.id.edittext);
+        textView = findViewById(R.id.texttotime);
+        String time = getIntent().getStringExtra("TIME");
+        if (time != null && !time.isEmpty()) {
+            textView.setText(time);
+        }
+
     }
     public void onclick(View view){
         String name = editText.getText().toString();
@@ -33,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this,SecondActivity.class);
             intent.putExtra("EXTRA_TEXT",name);
             startActivity(intent);
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"Вы ничего не ввели", Toast.LENGTH_SHORT).show();
         }
     }
 
