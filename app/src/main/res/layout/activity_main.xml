@@ -7,13 +7,34 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="399dp"
+        android:hint="Введите своё имя"
+        tools:ignore="MissingConstraints" />
+
+
     <TextView
+        android:id="@+id/texttotime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Тут будет время"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="164dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="220dp"
+        android:onClick="onclick"
+        android:text="Переход"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
