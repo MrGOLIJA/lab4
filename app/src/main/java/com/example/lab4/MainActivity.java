@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         String name = editText.getText().toString();
         if (!name.isEmpty()){
             Intent intent = new Intent(this,SecondActivity.class);
-            intent.putExtra("EXTRA_TEXT",name);
+            intent.putExtra("NAME",name);
             startActivity(intent);
         }
         else{
