@@ -23,7 +23,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(bundle);
         setContentView(R.layout.second_activity);
         textView = findViewById(R.id.textView);
-        String currentText = getIntent().getStringExtra("EXTRA_TEXT");
+        String currentText = getIntent().getStringExtra("NAME");
         textView.setText("Добро пожаловать "+currentText);
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
